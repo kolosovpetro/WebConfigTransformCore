@@ -15,9 +15,6 @@ on:
 
   workflow_dispatch:
 
-  schedule:
-    - cron: '0 0 * * 0'
-
 jobs:
   build-test-drop-artifacts:
     name: Build Test & Drop artifacts
@@ -31,13 +28,11 @@ jobs:
       DOTNET_NOLOGO: 1
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
       NUGET_PACKAGES: ${{ github.workspace }}/.github/nuget-packages
-      ProjectPath: './DotnetTemplate/DotnetTemplate.csproj'
-      TestProjectPath: './DotnetTemplate.Tests/DotnetTemplate.Tests.csproj'
+      ProjectPath: './WebConfigTransformRunner/WebConfigTransformRunner.csproj'
       Configuration: 'Release'
-      Solution: 'DotnetTemplate.sln'
+      Solution: 'WebConfigTransformRunner.sln'
       ArtifactName: 'drop'
       ArtifactPath: 'publish'
-      PathToTestCoverage: './DotnetTemplate.Tests/TestResults/coverage.info'
     
     steps:
       - name: Fetch Sources
@@ -52,9 +47,6 @@ jobs:
 
       - name: Determine Version
         uses: gittools/actions/gitversion/execute@v0.9.15
-      #        with:
-      #          updateAssemblyInfo: true
-      #          updateAssemblyInfoFilename: 'WebApp/Properties/AssemblyInfo.cs'
 
       - name: Setup .NET 6.0 SDK
         uses: actions/setup-dotnet@v3
@@ -73,24 +65,6 @@ jobs:
       - name: Build Solution
         run: |
           dotnet build ${{ env.Solution }} --configuration ${{ env.Configuration }} /p:ContinuousIntegrationBuild=true --no-restore
-
-      - name: Run Unit Tests
-        run: |
-          dotnet test ${{ env.TestProjectPath }} --configuration ${{ env.Configuration }} --no-build
-        env:
-          CollectCoverage: true
-          CoverletOutputFormat: lcov
-          ThresholdStat: total
-          ThresholdType: Line
-          CoverletOutput: TestResults/
-          SkipAutoProps: true
-          Threshold: 80
-
-      - name: Publish coverage report to Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: ${{ env.PathToTestCoverage }}
 
       - name: Run .NET Publish
         run: |

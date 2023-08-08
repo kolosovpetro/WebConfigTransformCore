@@ -1,44 +1,28 @@
-# .NET project template
+# Web Config Transform Runner
 
-This is a template for creating .NET projects with compile-time code style checking, CI/CD workflows for Github Actions
-and Azure pipelines.
-Also, includes SonarCloud integration.
+Inspired by https://github.com/erichexter/WebConfigTransformRunner.
 
-## Nuget packages
+This is a commandline tool to run an ASP.Net web.config transformation.
 
-### Compile time code style checking
+### Usage:
 
-- `Microsoft.CodeAnalysis.NetAnalyzers`
+  	WebConfigTransformationRunner.exe WebConfigFilename TransformFilename OutputFilename
 
-### Unit tests project
+### More Information:
 
-- `coverlet.msbuild`
-- `coverlet.collector`
-- `FluentAssertions`
+* https://github.com/erichexter/WebConfigTransformRunner
+* http://lostechies.com/erichexter/2013/01/20/asp-net-web-config-transform-console-utility-released-on-nuget/
 
-## Required property groups in project file
+### Best way to get this tool?
 
-```xml
+Use NuGet and "Install-Package WebConfigTransformRunner" and it'll show up in the Tools folder in your packages. You can
+also use the NuGet.exe command line and just "nuget install WebConfigTransformRunner."
 
-<PropertyGroup>
-    <EnableNETAnalyzers>true</EnableNETAnalyzers>
-    <AnalysisMode>Recommended</AnalysisMode>
-    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-</PropertyGroup>
-```
+	Install-Package WebConfigTransformRunner
 
-## Commands
+### Documentation
 
-- `dotnet test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover -p:CoverletOutput=../TestResults`
-- `dotnet tool install --global dotnet-reportgenerator-globaltool --version 4.8.6`
-- `reportgenerator "-reports:TestResults.opencover.xml" "-targetdir:coveragereport" -reporttypes:Html`
-- `dotnet test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover -p:CoverletOutput=TestResults -p:SkipAutoProps=true -p:Threshold=80`
+on the Web.Config Transformation Syntax is located here:
 
-## Sources
-
-- [Defining formatting rules in .NET with EditorConfig](https://blog.genezini.com/p/defining-formatting-rules-in-.net-with-editorconfig)
-- [Enforcing .NET code style rules at compile time](https://blog.genezini.com/p/enforcing-.net-code-style-rules-at-compile-time)
-- [Analyzing and enforcing .NET code coverage with coverlet](https://blog.genezini.com/p/analyzing-and-enforcing-.net-code-coverage-with-coverlet)
-- [SonarCloud via GitHub Actions](https://github.com/kolosovpetro/SonarCloudViaGithubActions)
-- [How to build a .NET template and use it within Visual Studio. Part 1: Key concepts](https://www.mytechramblings.com/posts/create-dotnet-templates-for-visual-studio-part-1/)
-- [How to build a .NET template and use it within Visual Studio. Part 2: Creating a template package](https://www.mytechramblings.com/posts/create-dotnet-templates-for-visual-studio-part-2/)
+* http://msdn.microsoft.com/en-us/library/dd465326.aspx
+* http://sedodream.com/2010/09/09/ExtendingXMLWebconfigConfigTransformation.aspx
