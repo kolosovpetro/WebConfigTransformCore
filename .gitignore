@@ -32,6 +32,7 @@ bld/
 publish.win-x64/
 publish.linux-x64/
 publish.osx-x64/
+TestData/HRBExample/
 
 # sonar scanner
 .scannerwork/*

@@ -18,3 +18,4 @@ This is a commandline tool to run an ASP.Net web.config transformation.
 
 - Build using above commands
 - Run `.\WebConfigTransformRunner.exe "../TestData/SetAttributesExample/Web.config" "../TestData/SetAttributesExample/Web.Debug.config" "../TestData/SetAttributesExample/NewWeb.Debug.config"`
+- Run `.\WebConfigTransformRunner.exe "../TestData/HRBExample/NASS.ThirdPartyUploadScheduler.config" "../TestData/HRBExample/NASS.ThirdPartyUploadScheduler.Prod.config" "../TestData/HRBExample/NewNASS.ThirdPartyUploadScheduler.config"`
