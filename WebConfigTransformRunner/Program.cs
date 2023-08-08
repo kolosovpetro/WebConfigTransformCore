@@ -4,7 +4,7 @@ using System.IO;
 
 namespace WebConfigTransformRunner;
 
-internal class Program
+internal static class Program
 {
     public static void Main(string[] args)
     {

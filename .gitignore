@@ -29,6 +29,9 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+publish.win-x64/
+publish.linux-x64/
+publish.osx-x64/
 
 # sonar scanner
 .scannerwork/*
