@@ -66,13 +66,50 @@ jobs:
         run: |
           dotnet build ${{ env.Solution }} --configuration ${{ env.Configuration }} /p:ContinuousIntegrationBuild=true --no-restore
 
-      - name: Run .NET Publish
+      - name: Publish Win x64
+        shell: pwsh
         run: |
-          dotnet publish ${{ env.ProjectPath }} --configuration ${{ env.Configuration }} --output ${{ env.ArtifactPath }}
-      #          dotnet publish "WebAppPath/WebAppProject.csproj" -r "linux-x64" -o "project-linux-build/src" --self-contained
+          dotnet publish ${{ env.ProjectPath }} `
+               --self-contained `
+               --runtime "win-x64" `
+               -c ${{ env.Configuration }} `
+               -o ./publish.win-x64 `
+               -p:PublishTrimmed=true `
+               -p:PublishSingleFile=true
+          Set-Location ./publish.win-x64
+          zip -r ../WebConfigTransformRunner-v${{ env.GITVERSION_SEMVER }}.win-x64.zip *
+
+      - name: Publish Linux x64
+        shell: pwsh
+        run: |
+          dotnet publish ${{ env.ProjectPath }} `
+               --self-contained `
+               --runtime "linux-x64" `
+               -c ${{ env.Configuration }} `
+               -o ./publish.linux-x64 `
+               -p:PublishTrimmed=true `
+               -p:PublishSingleFile=true
+          Set-Location ./publish.win-x64
+          zip -r ../WebConfigTransformRunner-v${{ env.GITVERSION_SEMVER }}.linux-x64.zip *
+
+      - name: Publish OSX x64
+        shell: pwsh
+        run: |
+          dotnet publish ${{ env.ProjectPath }} `
+               --self-contained `
+               --runtime "osx-x64" `
+               -c ${{ env.Configuration }} `
+               -o ./publish.osx-x64 `
+               -p:PublishTrimmed=true `
+               -p:PublishSingleFile=true
+          Set-Location ./publish.osx-x64
+          zip -r ../WebConfigTransformRunner-v${{ env.GITVERSION_SEMVER }}.osx-x64.zip *
 
       - name: Drop Artifact
         uses: actions/upload-artifact@v3
         with:
           name: ${{ env.ArtifactName }}
-          path: ${{ env.ArtifactPath }}
+          path: |
+            ./WebConfigTransformRunner-v${{ env.GITVERSION_SEMVER }}.win-x64.zip
+            ./WebConfigTransformRunner-v${{ env.GITVERSION_SEMVER }}.linux-x64.zip
+            ./WebConfigTransformRunner-v${{ env.GITVERSION_SEMVER }}.osx-x64.zip

@@ -15,3 +15,6 @@ This is a commandline tool to run an ASP.Net web.config transformation.
 - `dotnet publish "WebConfigTransformRunner/WebConfigTransformRunner.csproj" --self-contained --runtime osx-x64 -c Release -o./publish.osx-x64 -p:PublishTrimmed=true -p:PublishSingleFile=true`
 
 ## To Test
+
+- Build using above commands
+- Run `.\WebConfigTransformRunner.exe "../TestData/SetAttributesExample/Web.config" "../TestData/SetAttributesExample/Web.Debug.config" "../TestData/SetAttributesExample/NewWeb.Debug.config"`
