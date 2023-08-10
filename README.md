@@ -24,3 +24,8 @@ This is a cross-platform command line tool to run an ASP .NET Web.config transfo
 
 - https://learn.microsoft.com/en-us/previous-versions/aspnet/dd465326(v=vs.110)
 - https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/transform-webconfig?view=aspnetcore-7.0
+
+
+## Icon credentials
+
+<a href="https://iconscout.com/icons/xml-file" target="_blank">Free Xml file Icon</a> by <a href="https://iconscout.com/contributors/first-styles" target="_blank">First Styles</a>

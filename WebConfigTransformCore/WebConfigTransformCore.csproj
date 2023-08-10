@@ -8,11 +8,16 @@
         <PackAsTool>true</PackAsTool>
         <ToolCommandName>dotnet-web-transform</ToolCommandName>
         <PackageOutputPath>./nupkg</PackageOutputPath>
-        <PackageId>dotnet.web.transform</PackageId>
+        <PackageId>web.config.transform.tool</PackageId>
         <Authors>Petro Kolosov</Authors>
         <Company>OSDS</Company>
         <PackageDescription>This is a cross-platform command line tool to run an ASP .NET Web.config transformation</PackageDescription>
         <RepositoryUrl>https://github.com/kolosovpetro/NugetPackGhActions</RepositoryUrl>
+        <Product>WebConfigTransformCore</Product>
+        <Version>1.0.1</Version>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageIcon>icon.png</PackageIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -21,6 +26,9 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.Web.Xdt" Version="3.1.0"/>
+        <None Include="../README.md" Pack="true" PackagePath="\"/>
+        <None Include="../LICENSE" Pack="true" PackagePath=""/>
+        <None Include="../icon.png" Pack="true" PackagePath=""/>
     </ItemGroup>
 
 </Project>
