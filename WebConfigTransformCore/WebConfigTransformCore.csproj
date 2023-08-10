@@ -6,9 +6,9 @@
         <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
         <PackAsTool>true</PackAsTool>
-        <ToolCommandName>WebConfigTransformCore</ToolCommandName>
+        <ToolCommandName>dotnet-web-transform</ToolCommandName>
         <PackageOutputPath>./nupkg</PackageOutputPath>
-        <PackageId>WebConfigTransformCore</PackageId>
+        <PackageId>dotnet.web.transform</PackageId>
         <Authors>Petro Kolosov</Authors>
         <Company>Github</Company>
         <PackageDescription>This is a cross-platform command line tool to run an ASP .NET Web.config transformation</PackageDescription>
