@@ -10,18 +10,19 @@ pr:
       - develop
       - master
 
+strategy:
+  windows:
+    imageName: 'windows-latest'
+  linux:
+    imageName: 'ubuntu-latest'
+
 stages:
   - stage: 'Test_Transform'
     jobs:
       - job: "Test_Transform"
         displayName: 'Test_Transform'
-        strategy:
-          windows:
-            imageName: 'windows-latest'
-          linux:
-            imageName: 'ubuntu-latest'
-          pool:
-            vmImage: $(imageName)
+        pool:
+          vmImage: $(imageName)
 
           steps:
             - checkout: self
