@@ -11,7 +11,7 @@
         <PackageId>WebConfigTransformCore</PackageId>
         <Authors>Petro Kolosov</Authors>
         <Company>Github</Company>
-        <PackageDescription>This is a crossplatfor commandline tool to run an ASP .NET Web.config transformation.</PackageDescription>
+        <PackageDescription>This is a cross-platform command line tool to run an ASP .NET Web.config transformation</PackageDescription>
         <RepositoryUrl>https://github.com/kolosovpetro/NugetPackGhActions</RepositoryUrl>
     </PropertyGroup>
 

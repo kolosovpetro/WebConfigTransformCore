@@ -2,7 +2,7 @@
 
 Inspired by https://github.com/erichexter/WebConfigTransformRunner.
 
-This is a commandline tool to run an ASP.Net web.config transformation.
+This is a cross-platform command line tool to run an ASP .NET Web.config transformation
 
 ## Supported .NET SDKs
 
