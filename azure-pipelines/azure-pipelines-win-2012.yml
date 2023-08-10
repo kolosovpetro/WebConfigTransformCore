@@ -23,21 +23,21 @@ stages:
                     packageType: sdk
                     version: 6.x
 
-                - script: |
+                - powershell: |
                     dotnet tool install --global web.config.transform.tool --version 1.0.5
                   displayName: 'Install web.config.transform.tool'
 
-                - script: |
+                - powershell: |
                     cat "Web.config"
                   workingDirectory: '$(Build.SourcesDirectory)/TestData/SetAttributesExample'
                   displayName: 'Print contents of web config'
 
-                - script: |
+                - powershell: |
                     dotnet-web-transform "Web.config" "Web.Debug.config" "NewWeb.Debug.config"
                   workingDirectory: '$(Build.SourcesDirectory)/TestData/SetAttributesExample'
                   displayName: 'Transform web.config'
 
-                - script: |
+                - powershell: |
                     cat "NewWeb.Debug.config"
                   workingDirectory: '$(Build.SourcesDirectory)/TestData/SetAttributesExample'
                   displayName: 'Print contents of new web config'
