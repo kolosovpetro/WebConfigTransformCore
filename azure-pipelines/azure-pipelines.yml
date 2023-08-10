@@ -1,0 +1,48 @@
+trigger:
+  branches:
+    include:
+      - develop
+      - master
+
+pr:
+  branches:
+    include:
+      - develop
+      - master
+
+stages:
+  - stage: 'Test_Transform'
+    jobs:
+      - job: "Test_Transform"
+        displayName: 'Test_Transform'
+        strategy:
+          windows:
+            imageName: 'windows-latest'
+          linux:
+            imageName: 'ubuntu-latest'
+          pool:
+            vmImage: $(imageName)
+
+        steps:
+          - checkout: self
+            fetchDepth: 0
+
+          - task: UseDotNet@2
+            displayName: 'Install .NET 6.x SDK'
+            inputs:
+              packageType: sdk
+              version: 6.x
+
+          - script: |
+              dotnet tool install --global web.config.transform.tool --version 1.0.5
+            displayName: 'Install web.config.transform.tool'
+
+          - script: |
+              dotnet-web-transform "Web.config" "Web.Debug.config" "NewWeb.Debug.config"
+            workingDirectory: '$(Build.SourcesDirectory)/TestData/SetAttributesExample'
+            displayName: 'Transform web.config'
+            
+          - script: |
+              cat "NewWeb.Debug.config"
+            workingDirectory: '$(Build.SourcesDirectory)/TestData/SetAttributesExample'
+            displayName: 'Print contents of web config'
