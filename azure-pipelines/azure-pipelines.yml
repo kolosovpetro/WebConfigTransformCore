@@ -11,10 +11,11 @@ pr:
       - master
 
 strategy:
-  windows:
-    imageName: 'windows-latest'
-  linux:
-    imageName: 'ubuntu-latest'
+  matrix:
+    windows:
+      imageName: 'windows-latest'
+    linux:
+      imageName: 'ubuntu-latest'
 
 stages:
   - stage: 'Test_Transform'
