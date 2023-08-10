@@ -1,11 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <AnalysisMode>Recommended</AnalysisMode>
-        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <OutputType>Exe</OutputType>
+        <TargetFrameworks>net6.0;netcoreapp3.1</TargetFrameworks>
+        <PackAsTool>true</PackAsTool>
+        <ToolCommandName>WebConfigTransformCore</ToolCommandName>
+        <PackageOutputPath>./nupkg</PackageOutputPath>
     </PropertyGroup>
 
     <ItemGroup>
@@ -13,7 +15,7 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.Web.Xdt" Version="3.1.0" />
+        <PackageReference Include="Microsoft.Web.Xdt" Version="3.1.0"/>
     </ItemGroup>
 
 </Project>

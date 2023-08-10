@@ -1,8 +1,13 @@
-# Web Config Transform Runner
+# Web Config Transform Core
 
 Inspired by https://github.com/erichexter/WebConfigTransformRunner.
 
 This is a commandline tool to run an ASP.Net web.config transformation.
+
+## Supported .NET SDKs
+
+- `netcoreapp3.1`
+- `net6.0`
 
 ## Used dependencies
 
@@ -17,8 +22,10 @@ This is a commandline tool to run an ASP.Net web.config transformation.
 ## To Test
 
 - Build using above commands
-- Run `.\WebConfigTransformRunner.exe "../TestData/SetAttributesExample/Web.config" "../TestData/SetAttributesExample/Web.Debug.config" "../TestData/SetAttributesExample/NewWeb.Debug.config"`
-- Run `.\WebConfigTransformRunner.exe "../TestData/HRBExample/NASS.ThirdPartyUploadScheduler.config" "../TestData/HRBExample/NASS.ThirdPartyUploadScheduler.Prod.config" "../TestData/HRBExample/NewNASS.ThirdPartyUploadScheduler.config"`
+-
+Run `.\WebConfigTransformRunner.exe "../TestData/SetAttributesExample/Web.config" "../TestData/SetAttributesExample/Web.Debug.config" "../TestData/SetAttributesExample/NewWeb.Debug.config"`
+-
+Run `.\WebConfigTransformRunner.exe "../TestData/HRBExample/NASS.ThirdPartyUploadScheduler.config" "../TestData/HRBExample/NASS.ThirdPartyUploadScheduler.Prod.config" "../TestData/HRBExample/NewNASS.ThirdPartyUploadScheduler.config"`
 
 ## Documentation
 

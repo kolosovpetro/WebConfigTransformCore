@@ -28,9 +28,9 @@ jobs:
       DOTNET_NOLOGO: 1
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
       NUGET_PACKAGES: ${{ github.workspace }}/.github/nuget-packages
-      ProjectPath: './WebConfigTransformRunner/WebConfigTransformRunner.csproj'
+      ProjectPath: './WebConfigTransformCore/WebConfigTransformCore.csproj'
       Configuration: 'Release'
-      Solution: 'WebConfigTransformRunner.sln'
+      Solution: 'WebConfigTransformCore.sln'
       ArtifactName: 'drop'
       ArtifactPath: 'publish'
     

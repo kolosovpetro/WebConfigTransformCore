@@ -9,6 +9,7 @@ dotnet_diagnostic.CA1416.severity = warning
 dotnet_diagnostic.IDE0072.severity = warning
 dotnet_diagnostic.IDE0270.severity = warning
 dotnet_diagnostic.CA1825.severity = warning
+dotnet_diagnostic.IDE0161.severity = warning
 
 # explicit type
 dotnet_diagnostic.IDE0007.severity = warning

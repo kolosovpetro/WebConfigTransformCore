@@ -17,8 +17,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\run-build-and-test.yml = .github\workflows\run-build-and-test.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebConfigTransformRunner", "WebConfigTransformRunner\WebConfigTransformRunner.csproj", "{0C11D2D2-8861-4003-A44E-671B2F8FE849}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestData", "TestData", "{EACDA493-DDBE-46CD-9380-34602871F6A6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SetAttributesExample", "SetAttributesExample", "{465D5F19-0957-4738-BFCE-5B1B66A337F6}"
@@ -34,16 +32,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HRBExample", "HRBExample", 
 		TestData\HRBExample\NewNASS.ThirdPartyUploadScheduler.config = TestData\HRBExample\NewNASS.ThirdPartyUploadScheduler.config
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebConfigTransformCore", "WebConfigTransformCore\WebConfigTransformCore.csproj", "{CF7248EC-B66E-46C9-99F9-DE16325E207D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0C11D2D2-8861-4003-A44E-671B2F8FE849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0C11D2D2-8861-4003-A44E-671B2F8FE849}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0C11D2D2-8861-4003-A44E-671B2F8FE849}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0C11D2D2-8861-4003-A44E-671B2F8FE849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF7248EC-B66E-46C9-99F9-DE16325E207D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF7248EC-B66E-46C9-99F9-DE16325E207D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF7248EC-B66E-46C9-99F9-DE16325E207D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF7248EC-B66E-46C9-99F9-DE16325E207D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4F59DF04-64F5-45F1-9767-F88CA7C1B8E5} = {6E8508F0-6477-4C41-B8A0-BC3F27B6ABF9}
