@@ -24,7 +24,7 @@ stages:
                     version: 6.x
 
                 - powershell: |
-                    dotnet tool install --global web.config.transform.tool --version 1.0.5
+                    dotnet tool update --global web.config.transform.tool --version 1.0.5
                   displayName: 'Install web.config.transform.tool'
 
                 - powershell: |
