@@ -12,9 +12,8 @@
         <Authors>Petro Kolosov</Authors>
         <Company>OSDS</Company>
         <PackageDescription>This is a cross-platform command line tool to run an ASP .NET Web.config transformation</PackageDescription>
-        <RepositoryUrl>https://github.com/kolosovpetro/NugetPackGhActions</RepositoryUrl>
+        <RepositoryUrl>https://github.com/kolosovpetro/WebConfigTransformCore</RepositoryUrl>
         <Product>WebConfigTransformCore</Product>
-        <Version>1.0.1</Version>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageIcon>icon.png</PackageIcon>
