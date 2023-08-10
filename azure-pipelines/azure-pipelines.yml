@@ -10,20 +10,19 @@ pr:
       - develop
       - master
 
-#strategy:
-#  matrix:
-#    windows:
-#      imageName: 'windows-latest'
-#    linux:
-#      imageName: 'ubuntu-latest'
-
 stages:
   - stage: 'Test_Transform'
     jobs:
       - job: "Test_Transform"
+        strategy:
+          matrix:
+            windows:
+              imageName: 'windows-latest'
+            linux:
+              imageName: 'ubuntu-latest'
         displayName: 'Test_Transform'
         pool:
-          vmImage: ubuntu-latest
+          vmImage: $(imageName)
 
         steps:
           - checkout: self
@@ -40,6 +39,11 @@ stages:
             displayName: 'Install web.config.transform.tool'
 
           - script: |
+              cat "Web.config"
+            workingDirectory: '$(Build.SourcesDirectory)/TestData/SetAttributesExample'
+            displayName: 'Print contents of web config'
+
+          - script: |
               dotnet-web-transform "Web.config" "Web.Debug.config" "NewWeb.Debug.config"
             workingDirectory: '$(Build.SourcesDirectory)/TestData/SetAttributesExample'
             displayName: 'Transform web.config'
@@ -47,4 +51,4 @@ stages:
           - script: |
               cat "NewWeb.Debug.config"
             workingDirectory: '$(Build.SourcesDirectory)/TestData/SetAttributesExample'
-            displayName: 'Print contents of web config'
+            displayName: 'Print contents of new web config'
