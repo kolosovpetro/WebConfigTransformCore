@@ -1,14 +1,6 @@
-trigger:
-  branches:
-    include:
-      - develop
-      - master
+trigger: none
 
-pr:
-  branches:
-    include:
-      - develop
-      - master
+pr: none
 
 stages:
   - stage: 'Test_Transform_Win2012'
