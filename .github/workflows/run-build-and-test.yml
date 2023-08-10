@@ -74,6 +74,7 @@ jobs:
                --runtime "win-x64" `
                -c ${{ env.Configuration }} `
                -o ./publish.win-x64 `
+               -f net6.0 `
                -p:PublishTrimmed=true `
                -p:PublishSingleFile=true
           Set-Location ./publish.win-x64
@@ -87,6 +88,7 @@ jobs:
                --runtime "linux-x64" `
                -c ${{ env.Configuration }} `
                -o ./publish.linux-x64 `
+               -f net6.0 `
                -p:PublishTrimmed=true `
                -p:PublishSingleFile=true
           Set-Location ./publish.win-x64
@@ -100,6 +102,7 @@ jobs:
                --runtime "osx-x64" `
                -c ${{ env.Configuration }} `
                -o ./publish.osx-x64 `
+               -f net6.0 `
                -p:PublishTrimmed=true `
                -p:PublishSingleFile=true
           Set-Location ./publish.osx-x64
