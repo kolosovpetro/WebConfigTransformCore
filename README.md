@@ -4,11 +4,6 @@ Inspired by https://github.com/erichexter/WebConfigTransformRunner.
 
 This is a cross-platform command line tool to run an ASP .NET Web.config transformation
 
-## Supported .NET SDKs
-
-- `netcoreapp3.1`
-- `net6.0`
-
 ## Used dependencies
 
 - `Microsoft.Web.Xdt`
