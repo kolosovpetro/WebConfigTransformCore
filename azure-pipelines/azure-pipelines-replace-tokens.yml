@@ -1,0 +1,41 @@
+trigger: none
+
+pr: none
+
+variables:
+  - name: 'ConnectionString'
+    value: 'Data Source=ReleaseSQLServer;Initial Catalog=MyReleaseDB;Integrated Security=True'
+
+stages:
+  - stage: 'Replace_Tokens_XML'
+    jobs:
+      - job: "Replace_Tokens__XML"
+        strategy:
+          matrix:
+            windows:
+              imageName: 'windows-latest'
+            linux:
+              imageName: 'ubuntu-latest'
+        displayName: 'Replace_Tokens__XML'
+        pool:
+          vmImage: $(imageName)
+
+        steps:
+          - checkout: self
+            fetchDepth: 0
+
+          - script: |
+              cat "Web.config"
+            workingDirectory: '$(Build.SourcesDirectory)/TestData/ReplaceTokensXML'
+            displayName: 'Print contents of web config'
+            
+          - task: replacetokens@5
+            displayName: 'Replace tokens Web.config'
+            inputs:
+              targetFiles: '$(Build.SourcesDirectory)/TestData/ReplaceTokensXML/Web.config'
+              escapeType: none
+              
+          - script: |
+              cat "Web.config"
+            workingDirectory: '$(Build.SourcesDirectory)/TestData/ReplaceTokensXML'
+            displayName: 'Print contents of web config'

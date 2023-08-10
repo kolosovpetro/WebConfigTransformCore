@@ -40,6 +40,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "azure-pipelines", "azure-pi
 	ProjectSection(SolutionItems) = preProject
 		azure-pipelines\azure-pipelines.yml = azure-pipelines\azure-pipelines.yml
 		azure-pipelines\azure-pipelines-win-2012.yml = azure-pipelines\azure-pipelines-win-2012.yml
+		azure-pipelines\azure-pipelines-replace-tokens.yml = azure-pipelines\azure-pipelines-replace-tokens.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReplaceTokensXML", "ReplaceTokensXML", "{BBAF637F-2103-4185-A094-EABDD775C138}"
+	ProjectSection(SolutionItems) = preProject
+		TestData\ReplaceTokensXML\Web.config = TestData\ReplaceTokensXML\Web.config
 	EndProjectSection
 EndProject
 Global
@@ -57,5 +63,6 @@ Global
 		{4F59DF04-64F5-45F1-9767-F88CA7C1B8E5} = {6E8508F0-6477-4C41-B8A0-BC3F27B6ABF9}
 		{465D5F19-0957-4738-BFCE-5B1B66A337F6} = {EACDA493-DDBE-46CD-9380-34602871F6A6}
 		{6D0814D6-86E4-4BD7-A870-09E657319EBF} = {EACDA493-DDBE-46CD-9380-34602871F6A6}
+		{BBAF637F-2103-4185-A094-EABDD775C138} = {EACDA493-DDBE-46CD-9380-34602871F6A6}
 	EndGlobalSection
 EndGlobal
