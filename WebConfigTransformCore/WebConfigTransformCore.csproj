@@ -10,7 +10,7 @@
         <PackageOutputPath>./nupkg</PackageOutputPath>
         <PackageId>dotnet.web.transform</PackageId>
         <Authors>Petro Kolosov</Authors>
-        <Company>Github</Company>
+        <Company>OSDS</Company>
         <PackageDescription>This is a cross-platform command line tool to run an ASP .NET Web.config transformation</PackageDescription>
         <RepositoryUrl>https://github.com/kolosovpetro/NugetPackGhActions</RepositoryUrl>
     </PropertyGroup>
